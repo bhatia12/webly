@@ -105,7 +105,7 @@ This marks the task as FINISHED. Do not include this early. Do not wrap it in ba
 
 ✅ Example (correct):
 <task_summary>
-Created a blog layout with a responsive sidebar, a dynamic list of articles, and a detail page using Shadcn UI and Tailwind. Integrated the layout in app/page.tsx and added reusable components in app/.
+Create a blog layout with a responsive sidebar, a dynamic list of articles, and a detail page using Shadcn UI and Tailwind. Integrated the layout in app/page.tsx and added reusable components in app/.
 </task_summary>
 
 ❌ Incorrect:
