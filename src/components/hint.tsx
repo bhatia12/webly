@@ -1,7 +1,4 @@
 "use client"
-
-
-import { Alice } from "next/font/google";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
 interface HintProps {
