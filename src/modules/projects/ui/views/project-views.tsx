@@ -6,6 +6,9 @@ import { MessagesContainer } from "../components/messages-container"
 import { Suspense, useState } from "react"
 import { Fragment } from "@/generated/prisma"
 import { ProjectHeader } from "../components/project-header"
+import { Tabs } from "@/components/ui/tabs"
+import { FragmentWeb } from "../components/fragment-web"
+
 
 interface Props{
     projectId: string
@@ -13,9 +16,7 @@ interface Props{
 
 export const ProjectView = ({projectId}: Props) => {
     const [activeFragment, setActiveFragment] = useState<Fragment | null>(null)
-    // const {data: project} = useSuspenseQuery(trpc.projects.getOne.queryOptions({
-    //     id: projectId
-    // }))
+    const [tabState, setTabState] = useState<"preview" | "code">("preview")
 
     return(
         <div className="h-screen">
@@ -42,6 +43,14 @@ export const ProjectView = ({projectId}: Props) => {
                     minSize={50}
                     
                 >
+                    {/* <Tabs
+                        className="h-full gap-y-0"
+                        defaultValue="preview"
+                        value={tabState}
+                        onValueChange={(value)=>setTabState}
+                    > */}
+                        {!!activeFragment && <FragmentWeb data={activeFragment}/>}
+                    {/* </Tabs> */}
                     {/* {JSON.stringify(messages, null, 2)} */}
                 </ResizablePanel>
             </ResizablePanelGroup>
